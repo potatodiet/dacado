@@ -20,6 +20,12 @@ public final class BinaryDecoder implements Decodable {
                 stringBuilder.append((char) color.getBlue());
             }
         }
+
+        final int indexOfNull = stringBuilder.indexOf("null");
+        if (indexOfNull != -1) {
+            stringBuilder.delete(indexOfNull, stringBuilder.length() + 1);
+        }
+
         text = stringBuilder.toString();
     }
 
