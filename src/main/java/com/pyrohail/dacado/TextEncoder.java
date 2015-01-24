@@ -1,6 +1,7 @@
 package com.pyrohail.dacado;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 
 /**
