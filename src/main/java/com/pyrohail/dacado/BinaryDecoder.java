@@ -21,6 +21,9 @@ public final class BinaryDecoder implements Decodable {
             }
         }
 
+        // Remove leading format identifier.
+        stringBuilder.delete(0, 3);
+
         final int indexOfNull = stringBuilder.indexOf("null");
         if (indexOfNull != -1) {
             stringBuilder.delete(indexOfNull, stringBuilder.length() + 1);
