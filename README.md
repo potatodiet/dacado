@@ -6,9 +6,9 @@ Encodes data into image files, also decodes those images.
 final TextEncoder textEncoder = new TextEncoder("Just a test.");
 
 try {
-    ImageIO.write(textEncoder.getEncodedImage(), "PNG", new File("text.png"));
+  ImageIO.write(textEncoder.getEncodedImage(), "PNG", new File("text.png"));
 } catch (IOException e) {
-    e.printStackTrace();
+  e.printStackTrace();
 }
 
 final Decoder decoder = new Decoder("text.png");

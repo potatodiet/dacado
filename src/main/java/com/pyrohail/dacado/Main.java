@@ -14,21 +14,21 @@ import java.io.IOException;
  */
 public final class Main {
 
-    public static void main(final String[] args) {
-        final TextEncoder textEncoder = new TextEncoder("Just a test.");
-        final BinaryEncoder binaryEncoder = new BinaryEncoder("0110100001100101011011000110110001101111");
+  public static void main(final String[] args) {
+    final TextEncoder textEncoder = new TextEncoder("Just a test.");
+    final BinaryEncoder binaryEncoder = new BinaryEncoder("0110100001100101011011000110110001101111");
 
-        try {
-            ImageIO.write(textEncoder.getEncodedImage(), "PNG", new File("text.png"));
-            ImageIO.write(binaryEncoder.getEncodedImage(), "PNG", new File("binary.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        final Decoder decoder1 = new Decoder("text.png");
-        System.out.println(decoder1.getText());
-
-        final Decoder decoder2 = new Decoder("binary.png");
-        System.out.println(decoder2.getText());
+    try {
+      ImageIO.write(textEncoder.getEncodedImage(), "PNG", new File("text.png"));
+      ImageIO.write(binaryEncoder.getEncodedImage(), "PNG", new File("binary.png"));
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+
+    final Decoder decoder1 = new Decoder("text.png");
+    System.out.println(decoder1.getText());
+
+    final Decoder decoder2 = new Decoder("binary.png");
+    System.out.println(decoder2.getText());
+  }
 }

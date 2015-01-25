@@ -13,9 +13,9 @@ import java.awt.image.BufferedImage;
  */
 public interface Encodable {
 
-    /**
-     * Getter for encodedImage.
-     * @return Image which contains encoded image.
-     */
-    BufferedImage getEncodedImage();
+  /**
+   * Getter for encodedImage.
+   * @return Image which contains encoded image.
+   */
+  BufferedImage getEncodedImage();
 }

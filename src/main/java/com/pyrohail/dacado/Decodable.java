@@ -11,9 +11,9 @@ package com.pyrohail.dacado;
  */
 public interface Decodable {
 
-    /**
-     * Getter for text.
-     * @return Decoded image in string format.
-     */
-    String getText();
+  /**
+   * Getter for text.
+   * @return Decoded image in string format.
+   */
+  String getText();
 }
