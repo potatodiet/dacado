@@ -8,12 +8,17 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 /**
+ * Decodes image which contains encoded binary data.
  * @author Justin Harrison
  * @since 0.1
  */
 public final class BinaryDecoder implements Decodable {
     private final String text;
 
+    /**
+     * Constructor.
+     * @param encodedImage Image which contains encoded binary data.
+     */
     public BinaryDecoder(final BufferedImage encodedImage) {
         final StringBuilder stringBuilder = new StringBuilder();
         for (int x = 0; x < encodedImage.getWidth(); ++x) {

@@ -9,18 +9,23 @@ import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 
 /**
+ * Encodes binary data into an image.
  * @author Justin Harrison
  * @since 0.1
  */
 public final class BinaryEncoder implements Encodable {
     private BufferedImage encodedImage;
 
+    /**
+     * Constructor.
+     * @param binary Binary data to be encoded.
+     */
     public BinaryEncoder(String binary) {
         while (0 != binary.length() % 3) {
             binary += null;
         }
 
-        final Dimension dimension = calculateDimension(binary);
+        final Dimension dimension = calculateDimension(binary.length());
         encodedImage = new BufferedImage(
                 (int) dimension.getWidth(),
                 (int) dimension.getHeight(),
@@ -38,10 +43,15 @@ public final class BinaryEncoder implements Encodable {
         }
     }
 
-    private Dimension calculateDimension(final String binary) {
+    /**
+     * Calculates needed rectangular size of encoded image.
+     * @param binaryLength Length of text to be encoded.
+     * @return Rectangular size of encoded image.
+     */
+    private Dimension calculateDimension(final int binaryLength) {
         final Dimension dimension = new Dimension();
         // Add one so first pixel can hold data type. e.g. text, or binary
-        dimension.setSize(binary.length() + 1, 1);
+        dimension.setSize(binaryLength + 1, 1);
         return dimension;
     }
 

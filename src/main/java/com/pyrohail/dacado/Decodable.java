@@ -5,9 +5,15 @@
 package com.pyrohail.dacado;
 
 /**
+ * Enables object to decode images.
  * @author Justin Harrison
  * @since 0.1
  */
 public interface Decodable {
+
+    /**
+     * Getter for text.
+     * @return Decoded image in string format.
+     */
     String getText();
 }

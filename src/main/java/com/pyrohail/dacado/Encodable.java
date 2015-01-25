@@ -7,9 +7,15 @@ package com.pyrohail.dacado;
 import java.awt.image.BufferedImage;
 
 /**
+ * Enables object to encode data into an image.
  * @author Justin Harrison
  * @since 0.1
  */
 public interface Encodable {
+
+    /**
+     * Getter for encodedImage.
+     * @return Image which contains encoded image.
+     */
     BufferedImage getEncodedImage();
 }

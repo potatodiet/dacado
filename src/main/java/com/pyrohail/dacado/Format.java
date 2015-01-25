@@ -5,6 +5,7 @@
 package com.pyrohail.dacado;
 
 /**
+ * Contains encoded data types.
  * @author Justin Harrison
  * @since 0.1
  */

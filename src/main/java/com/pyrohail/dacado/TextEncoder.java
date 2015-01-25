@@ -9,18 +9,23 @@ import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 
 /**
+ * Encodes text into an image.
  * @author Justin Harrison
  * @since 0.1
  */
 public final class TextEncoder implements Encodable {
     private final BufferedImage encodedImage;
 
+    /**
+     * Constructor.
+     * @param text String to be encoded.
+     */
     public TextEncoder(String text) {
         while (0 != text.length() % 3) {
             text += null;
         }
 
-        final Dimension dimension = calculateDimension(text);
+        final Dimension dimension = calculateDimension(text.length());
         encodedImage = new BufferedImage(
                 (int) dimension.getWidth(),
                 (int) dimension.getHeight(),
@@ -36,11 +41,16 @@ public final class TextEncoder implements Encodable {
         }
     }
 
-    private Dimension calculateDimension(final String text) {
+    /**
+     * Calculates needed rectangular size of encoded image.
+     * @param textLength Length of text to be encoded.
+     * @return Rectangular size of encoded image.
+     */
+    private Dimension calculateDimension(final int textLength) {
         final Dimension dimension = new Dimension();
         // Divide by 3 so each RGB value can hold a character.
         // Add one so first pixel can hold data type. e.g. text, or binary
-        dimension.setSize((text.length() / 3) + 1, 1);
+        dimension.setSize((textLength / 3) + 1, 1);
         return dimension;
     }
 
