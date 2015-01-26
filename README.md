@@ -18,4 +18,4 @@ System.out.println(decoder.getText());
 # Contributors
 Run tests: ``` gradle test ```
 
-Build jar: ``` gradle buildJar ``` location is build/libs/dacado-(version).jar
+Build jar: ``` gradle assemble ``` location is build/libs/dacado-(version).jar
