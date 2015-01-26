@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-  testCompile group: 'junit', name: 'junit', version: '3.0'
+  testCompile group: 'junit', name: 'junit', version: '3.8.2'
 }
 
 task buildJar(type: Jar) {
