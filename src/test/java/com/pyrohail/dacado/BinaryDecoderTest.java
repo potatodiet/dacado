@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import junit.runner.Version;
+
 public final class BinaryDecoderTest extends TestCase {
   private final BinaryDecoder binaryDecoder;
   private static final String DECODED_BINARY = "0110100001100101011011000110110001101111";
@@ -27,6 +29,7 @@ public final class BinaryDecoderTest extends TestCase {
       e.printStackTrace();
     }
     binaryDecoder = new BinaryDecoder(encodedImage);
+    System.out.println(Version.id());
   }
 
   public void testGetText() {
