@@ -6,7 +6,7 @@
 
 package com.pyrohail.dacado;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -14,7 +14,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class TextDecoderTest extends TestCase {
+import static org.junit.Assert.assertEquals;
+
+public class TextDecoderTest {
   private final TextDecoder textDecoder;
   private static final String DECODED_TEXT = "Just a test.";
   
@@ -29,6 +31,7 @@ public class TextDecoderTest extends TestCase {
     textDecoder = new TextDecoder(encodedImage);
   }
   
+  @Test
   public void testGetText() {
     assertEquals(textDecoder.getText(), DECODED_TEXT);
   }

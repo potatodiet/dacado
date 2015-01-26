@@ -6,7 +6,7 @@
 
 package com.pyrohail.dacado;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -14,7 +14,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class TextEncoderTest extends TestCase {
+import static org.junit.Assert.assertTrue;
+
+public class TextEncoderTest {
   private final TextEncoder binaryEncoder;
   private BufferedImage encodedImage;
 
@@ -28,6 +30,7 @@ public class TextEncoderTest extends TestCase {
     }
   }
 
+  @Test
   public void testGetEncodedImage() {
     assertTrue(Utility.compareImages(binaryEncoder.getEncodedImage(), encodedImage));
   }

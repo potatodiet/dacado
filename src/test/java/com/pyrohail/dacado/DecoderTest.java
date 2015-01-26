@@ -6,11 +6,13 @@
 
 package com.pyrohail.dacado;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
 import java.net.URISyntaxException;
 
-public class DecoderTest extends TestCase {
+import static org.junit.Assert.assertEquals;
+
+public class DecoderTest {
   private Decoder decoderText;
   private Decoder decoderBinary;
   private static final String DECODED_TEXT = "Just a test.";
@@ -25,6 +27,7 @@ public class DecoderTest extends TestCase {
     }
   }
   
+  @Test
   public void testGetText() {
     assertEquals(decoderText.getText(), DECODED_TEXT);
     assertEquals(decoderBinary.getText(), DECODED_BINARY);
