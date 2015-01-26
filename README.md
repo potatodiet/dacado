@@ -14,3 +14,8 @@ try {
 final Decoder decoder = new Decoder("text.png");
 System.out.println(decoder.getText());
 ```
+
+# Contributors
+Run tests: ``` gradle test ```
+
+Build jar: ``` gradle buildJar ``` location is build/libs/dacado-(version).jar
