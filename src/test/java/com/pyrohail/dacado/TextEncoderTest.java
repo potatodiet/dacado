@@ -32,6 +32,6 @@ public class TextEncoderTest {
 
   @Test
   public void testGetEncodedImage() {
-    assertTrue(Utility.compareImages(binaryEncoder.getEncodedImage(), encodedImage));
+    assertTrue(Utility.compareImages(encodedImage, binaryEncoder.getEncodedImage()));
   }
 }

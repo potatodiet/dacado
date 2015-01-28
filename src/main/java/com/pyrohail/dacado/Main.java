@@ -7,6 +7,7 @@ package com.pyrohail.dacado;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.util.BitSet;
 
 /**
  * @author Justin Harrison
@@ -16,7 +17,8 @@ public final class Main {
 
   public static void main(final String[] args) {
     final TextEncoder textEncoder = new TextEncoder("Just a test.");
-    final BinaryEncoder binaryEncoder = new BinaryEncoder("0110100001100101011011000110110001101111");
+    final byte[] bytes = new byte[] { 0b01010101, 0b01110110, 0b01110001 };
+    final BinaryEncoder binaryEncoder = new BinaryEncoder(bytes);
 
     try {
       ImageIO.write(textEncoder.getEncodedImage(), "PNG", new File("text.png"));

@@ -33,6 +33,6 @@ public class TextDecoderTest {
   
   @Test
   public void testGetText() {
-    assertEquals(textDecoder.getText(), DECODED_TEXT);
+    assertEquals(DECODED_TEXT,  textDecoder.getText());
   }
 }

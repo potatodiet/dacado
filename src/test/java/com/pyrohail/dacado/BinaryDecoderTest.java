@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 
 public final class BinaryDecoderTest {
   private final BinaryDecoder binaryDecoder;
-  private static final String DECODED_BINARY = "0110100001100101011011000110110001101111";
+  private static final String DECODED_BINARY = "101010111101101110001";
 
   public BinaryDecoderTest() {
     BufferedImage encodedImage = null;
@@ -33,6 +33,6 @@ public final class BinaryDecoderTest {
 
   @Test
   public void testGetText() {
-    assertEquals(binaryDecoder.getText(), DECODED_BINARY);
+    assertEquals(DECODED_BINARY, binaryDecoder.getText());
   }
 }

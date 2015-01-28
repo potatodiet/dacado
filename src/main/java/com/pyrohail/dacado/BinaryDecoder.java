@@ -24,18 +24,22 @@ public final class BinaryDecoder implements Decodable {
     for (int x = 0; x < encodedImage.getWidth(); ++x) {
       for (int y = 0; y < encodedImage.getHeight(); ++y) {
         final Color color = new Color(encodedImage.getRGB(x, y));
-        stringBuilder.append((char) color.getRed());
-        stringBuilder.append((char) color.getGreen());
-        stringBuilder.append((char) color.getBlue());
+        stringBuilder.append(Integer.toString(color.getRed(), 2));
+        stringBuilder.append(Integer.toString(color.getGreen(), 2));
+        stringBuilder.append(Integer.toString(color.getBlue(), 2));
       }
     }
 
     // Remove leading format identifier.
     stringBuilder.delete(0, 3);
 
-    final int indexOfNull = stringBuilder.indexOf("null");
-    if (indexOfNull != -1) {
-      stringBuilder.delete(indexOfNull, stringBuilder.length() + 1);
+    while (true) {
+      final int lastOne = stringBuilder.indexOf("1", stringBuilder.length() - 6);
+      if (lastOne == -1) {
+        stringBuilder.delete(stringBuilder.length() - 6, stringBuilder.length() + 1);
+      } else {
+        break;
+      }
     }
 
     text = stringBuilder.toString();

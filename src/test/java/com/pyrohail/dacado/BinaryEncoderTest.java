@@ -21,7 +21,7 @@ public class BinaryEncoderTest {
   private BufferedImage encodedImage;
   
   public BinaryEncoderTest() {
-    binaryEncoder = new BinaryEncoder("0110100001100101011011000110110001101111");
+    binaryEncoder = new BinaryEncoder(new byte[] { 0b01010101, 0b01110110, 0b01110001 });
 
     try {
       encodedImage = ImageIO.read(new File(getClass().getResource("/image/binary.png").toURI()));
@@ -32,6 +32,6 @@ public class BinaryEncoderTest {
   
   @Test
   public void testGetEncodedImage() {
-    assertTrue(Utility.compareImages(binaryEncoder.getEncodedImage(), encodedImage));
+    assertTrue(Utility.compareImages(encodedImage, binaryEncoder.getEncodedImage()));
   }
 }

@@ -16,7 +16,7 @@ public class DecoderTest {
   private Decoder decoderText;
   private Decoder decoderBinary;
   private static final String DECODED_TEXT = "Just a test.";
-  private static final String DECODED_BINARY = "0110100001100101011011000110110001101111";
+  private static final String DECODED_BINARY = "101010111101101110001";
   
   public DecoderTest() {
     try {
@@ -29,7 +29,7 @@ public class DecoderTest {
   
   @Test
   public void testGetText() {
-    assertEquals(decoderText.getText(), DECODED_TEXT);
-    assertEquals(decoderBinary.getText(), DECODED_BINARY);
+    assertEquals(DECODED_TEXT, decoderText.getText());
+    assertEquals(DECODED_BINARY, decoderBinary.getText());
   }
 }

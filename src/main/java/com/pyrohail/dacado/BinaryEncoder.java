@@ -7,6 +7,7 @@ package com.pyrohail.dacado;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
+import java.util.Arrays;
 
 /**
  * Encodes binary data into an image.
@@ -43,6 +44,35 @@ public final class BinaryEncoder implements Encodable {
     }
   }
 
+  /**
+   * Constructor.
+   * @param bytes Binary data to be encoded.
+   */
+  public BinaryEncoder(byte[] bytes) {
+    while (0 != bytes.length % 3) {
+      bytes = Arrays.copyOf(bytes, bytes.length + 1);
+    }
+
+    final Dimension dimension = calculateDimension(bytes.length);
+    encodedImage = new BufferedImage(
+        (int) dimension.getWidth(),
+        (int) dimension.getHeight(),
+        BufferedImage.TYPE_3BYTE_BGR
+    );
+
+    encodedImage.setRGB(0, 0, Format.TYPE_INT_Binary);
+
+    int pixelPos = 0;
+    for (int i = 0; i < bytes.length; i += 3) {
+      pixelPos++;
+      encodedImage.setRGB(pixelPos, 0, new Color(
+          bytes[i],
+          bytes[i + 1],
+          bytes[i + 2]).getRGB()
+      );
+    }
+  }
+  
   /**
    * Calculates needed rectangular size of encoded image.
    * @param binaryLength Length of text to be encoded.
